@@ -1,17 +1,9 @@
-﻿from sqlalchemy import Column, Integer, String
-from db import Base
-import uuid
+﻿import uuid
 from sqlalchemy import Column, String, DateTime, ForeignKey, Text, JSON
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
-from db import Base
 
-class Complaint(Base):
-    __tablename__ = 'complaints'
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    email = Column(String)
-    details = Column(String)
+Base = declarative_base()
 
 
 # Users table
